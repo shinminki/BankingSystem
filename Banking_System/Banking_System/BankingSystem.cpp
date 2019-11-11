@@ -1,3 +1,12 @@
+/*
+* BankingSystem ver 0.2
+* 작성자 : 신민기	
+* 내용 : TodoList 03 ~ 05 내역 Update
+			03- 깊은 복사 생성자 정의
+			04- const 선언 가능한 모든 멤버함수를 const 선언 
+			05- control 클래스 만들기
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
