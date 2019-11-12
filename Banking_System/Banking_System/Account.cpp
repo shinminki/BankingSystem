@@ -2,6 +2,18 @@
 #include "Account.h"
 
 
+Account& Account::operator=(const Account& ref) {
+	accID = ref.accID;
+	balance = ref.balance;
+
+	delete[]cusName;
+	int len = strlen(ref.cusName) + 1;
+	cusName = new char[len];
+	strcpy(cusName, ref.cusName);
+
+	return *this;
+}
+
 Account::Account(int ID, int money, char* name) :
 	accID(ID), balance(money) {
 
@@ -9,7 +21,7 @@ Account::Account(int ID, int money, char* name) :
 	strcpy(cusName, name);
 };
 
-Account::Account(const Account& ref) :
+Account::Account(const Account& ref) : // 깊은 복사 생성자
 	accID(ref.accID), balance(ref.balance)
 {
 	cusName = new char[strlen(ref.cusName) + 1];

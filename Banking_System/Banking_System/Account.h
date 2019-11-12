@@ -6,9 +6,9 @@ private:
 	int balance;    //잔액
 	char* cusName;  //이름
 public:
-	//Account(){}
 	Account(int ID, int money, char* name);
-	Account(const Account& ref);
+	Account(const Account& ref); // 깊은 복사생성자
+	Account& operator=(const Account& ref); // 대입 연산자의 깊은 복사
 	int GetAccID() const;
 	virtual void Deposit(int money);
 	int Withdraw(int money);

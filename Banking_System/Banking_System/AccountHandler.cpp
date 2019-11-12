@@ -6,7 +6,7 @@
 
 int AccountHandler::accNum = 0;
 
-AccountHandler::AccountHandler() { *accArr = NULL; }
+AccountHandler::AccountHandler() {}
 
 void AccountHandler::ShowMenu(void) const
 {
@@ -150,7 +150,7 @@ void AccountHandler::ShowAllAccInfo(void) const
 		cout << " - - - - - - - - - - - - - - - - - - - " << endl << endl;
 	}
 
-	cout << "ÃÑ °èÁÂ : " << accNum << " / 100 " << endl;
+	cout << "ÃÑ °èÁÂ : " << accNum << " / " << MAX_ARR << endl;
 }
 
 AccountHandler::~AccountHandler() {

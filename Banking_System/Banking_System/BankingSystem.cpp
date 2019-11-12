@@ -1,12 +1,12 @@
 /*
-* 2019-11-12
-* BankingSystem ver 0.
+* 2019-11-13
+* BankingSystem ver 0.3
 * 작성자 : 신민기	
-* 내용 : TodoList 08 ~  내역 Update
+* 내용 : TodoList 08 내역 Update
 *			08 - AccountHandler 클래스 내의 배열 멤버를 배열 클래스로 대체
 					(BoundCheckPointPtrArray 배열 클래스)
-			   - 일부 클래스 깊은복사 대입연산자 오버로딩
-*			00 
+			   - Account 클래스 깊은복사 대입연산자 오버로딩
+*			
 *																	
 */
 #include "BankingCommonDecl.h"

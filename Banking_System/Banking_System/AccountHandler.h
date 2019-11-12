@@ -2,10 +2,13 @@
 #include "Account.h"
 #include "AccountArray.h"
 
+const int MAX_ARR = 50;
+
 class AccountHandler {
 private:
 	//Account* accArr[100];
-	BoundCheckAccountPtrArray accArr;
+	
+	BoundCheckAccountPtrArray accArr = MAX_ARR;
 	static int accNum;
 
 public:

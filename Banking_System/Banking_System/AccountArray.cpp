@@ -2,6 +2,10 @@
 #include "AccountArray.h"
 
 
+BoundCheckAccountPtrArray::BoundCheckAccountPtrArray(int len) : arrLen(len) {
+	accArr = new ACCOUNT_PTR[len];
+}
+
 ACCOUNT_PTR& BoundCheckAccountPtrArray::operator[] (int idx)
 {
 	if (idx < 0 || idx >= arrLen)
@@ -21,3 +25,4 @@ ACCOUNT_PTR BoundCheckAccountPtrArray::operator[] (int idx) const
 	}
 	return accArr[idx];
 }
+
