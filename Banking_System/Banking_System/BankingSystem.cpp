@@ -1,11 +1,12 @@
 /*
 * 2019-11-12
-* BankingSystem ver 0.3
+* BankingSystem ver 0.
 * 작성자 : 신민기	
-* 내용 : TodoList 06 ~ 07 내역 Update
-*			06 - Account 클래스를 상속하는 클래스 추가  - NormalAccount(보통예금계좌)
-*														- HighCreditAccount(신용신뢰계좌)
-*			07 - 파일 분할
+* 내용 : TodoList 08 ~  내역 Update
+*			08 - AccountHandler 클래스 내의 배열 멤버를 배열 클래스로 대체
+					(BoundCheckPointPtrArray 배열 클래스)
+			   - 일부 클래스 깊은복사 대입연산자 오버로딩
+*			00 
 *																	
 */
 #include "BankingCommonDecl.h"

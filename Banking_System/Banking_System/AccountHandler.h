@@ -1,9 +1,11 @@
 #pragma once
 #include "Account.h"
+#include "AccountArray.h"
 
 class AccountHandler {
 private:
-	Account* accArr[100];
+	//Account* accArr[100];
+	BoundCheckAccountPtrArray accArr;
 	static int accNum;
 
 public:

@@ -6,6 +6,7 @@ private:
 	int balance;    //ÀÜ¾×
 	char* cusName;  //ÀÌ¸§
 public:
+	//Account(){}
 	Account(int ID, int money, char* name);
 	Account(const Account& ref);
 	int GetAccID() const;
