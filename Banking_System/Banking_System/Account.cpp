@@ -2,40 +2,12 @@
 #include "Account.h"
 
 
-Account& Account::operator=(const Account& ref) {
-	accID = ref.accID;
-	balance = ref.balance;
-
-	delete[]cusName;
-	int len = strlen(ref.cusName) + 1;
-	cusName = new char[len];
-	strcpy(cusName, ref.cusName);
-
-	return *this;
-}
-
-Account::Account(int ID, int money, char* name) :
+Account::Account(int ID, int money, String name) :
 	accID(ID), balance(money) {
-
-	cusName = new char[strlen(name) + 1];
-	strcpy(cusName, name);
+	cusName = name;
 };
 
-Account::Account(const Account& ref) : // 깊은 복사 생성자
-	accID(ref.accID), balance(ref.balance)
-{
-	cusName = new char[strlen(ref.cusName) + 1];
-	strcpy(cusName, ref.cusName);
-};
-
-int Account::GetAccID() const {
-	/*if (this != NULL)
-	{
-		return accID;
-	}*/
-	return accID;
-
-}
+int Account::GetAccID() const {	return accID; }
 
 void Account::Deposit(int money)
 {
@@ -59,8 +31,4 @@ void Account::ShowAccInfo() const
 		cout << "     이름 : " << cusName << endl;
 		cout << "     잔액 : " << balance << endl;
 	}
-}
-
-Account::~Account() {
-	delete[]cusName;
 }

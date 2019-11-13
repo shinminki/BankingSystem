@@ -8,11 +8,11 @@ class HighCreditAccount : public NormalAccount
 private:
 	int grade;
 public:
-	HighCreditAccount(int id, int mon, char* name, int rate, int grd) : NormalAccount(id, mon, name, rate), grade(grd) {}
+	HighCreditAccount(int id, int mon, String name, int rate, int grd) : NormalAccount(id, mon, name, rate), grade(grd) {}
 	void Deposit(int money) {
-		NormalAccount::Deposit(money);
-		money = money * (grade / 100.0);
-		Account::Deposit(money);
+		NormalAccount::Deposit(money); // 보통예금 이자율 계산 후 입금
+		money = money * (grade / 100.0); // 특별이자 계산
+		Account::Deposit(money); // 특별이자분 입금
 	}
 	void ShowAccInfo() const
 	{

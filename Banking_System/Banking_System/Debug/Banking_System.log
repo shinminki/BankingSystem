@@ -1,6 +1,9 @@
-﻿  AccountHandler.cpp
-C:\Users\SMK\C++Project\BankingSystem\Banking_System\Banking_System\NormalAccount.h(12,1): warning C4244: '+=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  Account.cpp
+  AccountArray.cpp
+  AccountHandler.cpp
+C:\Users\samsung\Desktop\C++Project\BankingSystem\Banking_System\Banking_System\NormalAccount.h(12,1): warning C4244: '+=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   BankingSystem.cpp
+  String.cpp
   코드를 생성하고 있습니다...
-C:\Users\SMK\C++Project\BankingSystem\Banking_System\Banking_System\HighCreditAccount.h(14,17): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Banking_System.vcxproj -> C:\Users\SMK\C++Project\BankingSystem\Banking_System\Debug\Banking_System.exe
+C:\Users\samsung\Desktop\C++Project\BankingSystem\Banking_System\Banking_System\HighCreditAccount.h(14,17): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Banking_System.vcxproj -> C:\Users\samsung\Desktop\C++Project\BankingSystem\Banking_System\Debug\Banking_System.exe

@@ -3,6 +3,7 @@
 #include "Account.h"
 #include "NormalAccount.h"
 #include "HighCreditAccount.h"
+#include "String.h"
 
 int AccountHandler::accNum = 0;
 
@@ -42,7 +43,7 @@ void AccountHandler::MakeAccount(void)
 
 void AccountHandler::MakeNormalAccount(void) {
 	int id;
-	char name[NAME_LEN];
+	String name;
 	int balance;
 	int interRate;
 
@@ -58,7 +59,7 @@ void AccountHandler::MakeNormalAccount(void) {
 
 void AccountHandler::MakeHighCreditAccount(void) {
 	int id;
-	char name[NAME_LEN];
+	String name;
 	int balance;
 	int interRate;
 	int grade;
