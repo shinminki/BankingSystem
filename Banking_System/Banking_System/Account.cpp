@@ -1,5 +1,6 @@
 #include "BankingCommonDecl.h"
 #include "Account.h"
+#include "AccountException.h"
 
 
 Account::Account(int ID, int money, String name) :
@@ -9,16 +10,27 @@ Account::Account(int ID, int money, String name) :
 
 int Account::GetAccID() const {	return accID; }
 
-void Account::Deposit(int money)
+int Account::GetBalance() const { return balance; }
+
+void Account::Deposit(int money) throw (MoneyInputException)
 {
+	if (money < 0){
+		MoneyInputException exmi(money);
+		throw exmi;
+	}
 	balance += money;
 }
 
-int Account::Withdraw(int money)
+int Account::Withdraw(int money) throw (WithdrawException)
 {
-	if (balance < money)
-		return 0;
-
+	if (money < 0) {
+		MoneyInputException exmi(money);
+		throw exmi;
+	}
+	if (balance < money) {
+		WithdrawException exwi(money);
+		throw exwi;
+	}
 	balance -= money;
 	return money;
 }
@@ -32,3 +44,4 @@ void Account::ShowAccInfo() const
 		cout << "     ภÜพื : " << balance << endl;
 	}
 }
+

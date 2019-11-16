@@ -1,5 +1,7 @@
 #pragma once
 #include "String.h"
+#include "AccountException.h"
+
 
 class Account {
 private:
@@ -9,7 +11,8 @@ private:
 public:
 	Account(int ID, int money, String name);
 	int GetAccID() const;
-	virtual void Deposit(int money);
-	int Withdraw(int money);
+	int GetBalance() const;
+	virtual void Deposit(int money) throw (MoneyInputException);
+	int Withdraw(int money) throw (WithdrawException);
 	virtual void ShowAccInfo() const;
 };

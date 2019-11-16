@@ -1,14 +1,17 @@
 /*
 * 2019-11-16
-* BankingSystem ver 0.41
+* BankingSystem ver 0.5
 * 작성자 : 신민기	
-* 내용 : TodoList 10 내역 Update
-*			10 - 배열 클래스(BoundCheckPointPtrArray)를 클래스 템플릿으로 정의하기
+* 내용 : TodoList 11 내역 Update
+*			11 - 예외처리 1. 계좌개설 이후, 예금된 금액보다 더 많은 금액의 출금을 요구할 경우
+	    				  2. 계좌개설 이후, 입출금 진행시 사용자로부터 0보다 작은 값을 입력받을 경우
+
 *			
 *																	
 */
 #include "BankingCommonDecl.h"
 #include "AccountHandler.h"
+#include "AccountException.h"
 
 int main()
 {
@@ -31,7 +34,7 @@ int main()
 			manager.DepositMoney();
 			break;
 		case WITHDRAW:
-			manager.WithdrawMoney();
+			manager.WithdrawMoney();	
 			break;
 		case INQUIRE:
 			manager.ShowAllAccInfo();

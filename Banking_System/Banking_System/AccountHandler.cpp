@@ -4,6 +4,7 @@
 #include "NormalAccount.h"
 #include "HighCreditAccount.h"
 #include "String.h"
+#include "AccountException.h"
 
 int AccountHandler::accNum = 0;
 
@@ -93,52 +94,60 @@ void AccountHandler::DepositMoney(void)
 
 	cout << "              [ 입 금 ]" << endl << endl;
 	cout << "    계좌 ID : "; cin >> id;
-	cout << "     입금액 : "; cin >> money;
+	while (1) {
+		cout << "     입금액 : "; cin >> money;
+		try {
+			for (int i = 0; i < accNum; i++){
+				if (accArr[i]->GetAccID() == id){
+					accArr[i]->Deposit(money);
 
-	for (int i = 0; i < accNum; i++)
-	{
-
-		if (accArr[i]->GetAccID() == id)
-		{
-			accArr[i]->Deposit(money);
-
-			cout << "    입금완료    " << endl << endl;
+					cout << "    입금완료    " << endl << endl;
+					return;
+				}
+			}
+			cout << " !ID ERROR! 일치하는 ID가 존재하지 않습니다." << endl << endl;
 			return;
 		}
-
+		catch (MoneyInputException & exmi)
+		{
+			exmi.showExceptionReason();
+		}
 	}
-
-	cout << " 일치하는 ID가 존재하지 않습니다... " << endl << endl;
-	return;
 }
 
 void AccountHandler::WithdrawMoney(void)
 {
+	int tmpIdx; //임시변수
 	int money;
 	int id;
 
 	cout << "              [ 출 금 ]" << endl << endl;
 	cout << "    계좌 ID : "; cin >> id;
-	cout << "     출금액 : "; cin >> money;
-
-	for (int i = 0; i < accNum; i++)
-	{
-		if (accArr[i]->GetAccID() == id)
-		{
-			if (accArr[i]->Withdraw(money) == 0)
-			{
-
-				cout << " 잔액이 부족합니다... " << endl;
-				return;
+	while (1){
+		cout << "     출금액 : "; cin >> money;
+		try {
+			for (int i = 0; i < accNum; i++){
+				if (accArr[i]->GetAccID() == id){
+					tmpIdx = i;
+					accArr[i]->Withdraw(money);
+					cout << "출금완료" << endl;
+					return;
+				}
 			}
-
-			cout << "출금완료" << endl;
-
+			cout << " !ID ERROR! 일치하는 ID가 존재하지 않습니다." << endl << endl;
 			return;
 		}
+		catch (MoneyInputException & exmi)
+		{
+			exmi.showExceptionReason();
+		}
+		catch (WithdrawException & exwi)
+		{
+			exwi.showExceptionReason();
+			cout << accArr[tmpIdx]->GetAccID() <<" 계좌의 현재잔액 : " 
+				<< accArr[tmpIdx]->GetBalance() << "원 입니다." << endl;
+		}
 	}
-
-	cout << " 일치하는 ID가 존재하지 않습니다... " << endl << endl;
 }
 
 void AccountHandler::ShowAllAccInfo(void) const
