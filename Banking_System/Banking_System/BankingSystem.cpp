@@ -1,9 +1,9 @@
 /*
-* 2019-11-13
-* BankingSystem ver 0.4
+* 2019-11-16
+* BankingSystem ver 0.41
 * 작성자 : 신민기	
-* 내용 : TodoList 09 내역 Update & version UP
-*			09 - 직접 String 클래스를 정의하여 적용시키기
+* 내용 : TodoList 10 내역 Update
+*			10 - 배열 클래스(BoundCheckPointPtrArray)를 클래스 템플릿으로 정의하기
 *			
 *																	
 */
